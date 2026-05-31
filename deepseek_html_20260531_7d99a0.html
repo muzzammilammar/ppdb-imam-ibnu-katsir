@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>PPDB TK & SD | Ma'had Imam Ibnu Katsir Karawang</title>
+  <meta name="description" content="Pendaftaran siswa baru TK dan SD Ma'had Imam Ibnu Katsir Karawang. Gelombang 1: 1 Nov - 31 Des 2026, Gelombang 2: 1 Jan - 31 Mar 2027. Sekolah Islam non-asrama dengan program Tahfidz Quran.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1a2e1f;
+      line-height: 1.5;
+    }
+    .bg-soft {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, #fafef7 0%, #f0f6ea 100%);
+      z-index: -2;
+    }
+    .bg-soft::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle at 10% 20%, rgba(60,100,70,0.02) 1.5px, transparent 1.5px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 1.8rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #e2ecd9;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .logo-mark {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.03), 0 0 0 1px #deecce;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease;
+      padding: 8px;
+    }
+    .logo-mark:hover { transform: scale(1.02); }
+    .school-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    /* fallback teks arab jika gambar tidak ada */
+    .arabic-fallback {
+      font-family: 'Scheherazade New', 'Noto Naskh Arabic', serif;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.35;
+      color: #2a5e38;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .arabic-fallback .line { font-size: 1.3rem; white-space: nowrap; }
+    .school-text h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #2a5e38;
+      letter-spacing: -0.3px;
+    }
+    .school-text p {
+      font-size: 0.85rem;
+      color: #7b8e6e;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+    .non-boarding-tag {
+      background: #eef5e9;
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #2c6e3c;
+      white-space: nowrap;
+    }
+    .welcome-hero {
+      background: #ffffff;
+      border-radius: 36px;
+      padding: 2rem;
+      margin: 1.5rem 0 2rem;
+      box-shadow: 0 10px 24px -12px rgba(0,0,0,0.04);
+      border: 1px solid #e5f0dd;
+    }
+    .welcome-hero h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #2a5e38;
+      margin-bottom: 0.8rem;
+    }
+    .welcome-hero h2 i { color: #c7a252; margin-right: 10px; }
+    .welcome-hero p {
+      font-size: 1.05rem;
+      color: #3c553a;
+      max-width: 90%;
+      margin-bottom: 0.5rem;
+    }
+    .greeting-box {
+      background: #fafcf6;
+      border-radius: 28px;
+      padding: 0.8rem 1.2rem;
+      margin-top: 1rem;
+      border-left: 4px solid #b38f4a;
+    }
+    .vision-mission {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+    .vm-card {
+      flex: 1;
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 2rem 1.8rem;
+      border: 1px solid #e3efdb;
+      box-shadow: 0 6px 14px -8px rgba(0,0,0,0.02);
+    }
+    .vm-card h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #2c6e3c;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 2px solid #e6e9df;
+      padding-bottom: 0.6rem;
+    }
+    .vm-card h3 i { color: #c7a252; }
+    .vm-card p { color: #2e4732; line-height: 1.6; }
+    .mission-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+    .mission-list li {
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.97rem;
+      color: #2e5438;
+    }
+    .mission-list li i { color: #b48c48; margin-top: 0.2rem; }
+    .motto-box {
+      background: #fef8e7;
+      border-radius: 28px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      font-weight: 700;
+      color: #b38f4a;
+      border: 1px solid #f2e5cf;
+      margin: 1rem 0 0;
+    }
+    .admission-info {
+      background: linear-gradient(115deg, #ffffff, #fefcf5);
+      border-radius: 32px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid #e1edd8;
+    }
+    .admission-info h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2a5e38;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+    .admission-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 1.5rem 0 0.8rem;
+    }
+    .admission-col { flex: 1; min-width: 210px; }
+    .admission-col h4 {
+      font-weight: 600;
+      color: #b38f4a;
+      margin-bottom: 1rem;
+      font-size: 1.15rem;
+    }
+    .admission-col ul { list-style: none; }
+    .admission-col li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+    }
+    .admission-col li i { color: #5f9e6b; width: 22px; }
+    .schedule-highlight {
+      background: #eef4e8;
+      border-radius: 20px;
+      padding: 1rem 1.5rem;
+      margin-top: 1.2rem;
+    }
+    .non-boarding-badge {
+      background: #eef4e8;
+      border-radius: 20px;
+      padding: 1rem 1.5rem;
+      margin-top: 1.5rem;
+      display: inline-block;
+    }
+    .address-block {
+      background: #fefcf5;
+      padding: 0.8rem 1rem;
+      border-radius: 24px;
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      border: 1px solid #ecf2e5;
+    }
+    .contact-section {
+      background: #ffffff;
+      border-radius: 32px;
+      padding: 1.8rem 2rem;
+      margin: 2rem 0;
+      border: 1px solid #e2ecd9;
+    }
+    .contact-section h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #2c6e3c;
+      margin-bottom: 1rem;
+    }
+    .contact-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-top: 0.8rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #fafef5;
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      border: 1px solid #deeada;
+    }
+    .contact-item i { font-size: 1.5rem; color: #b38f4a; }
+    .contact-item span { font-weight: 600; color: #2a5e38; }
+    .btn-register {
+      display: inline-block;
+      background: #16a34a;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 16px -8px rgba(22,163,74,0.3);
+      cursor: pointer;
+      border: none;
+    }
+    .btn-register:hover {
+      background: #15803d;
+      transform: translateY(-2px);
+    }
+    .footer {
+      margin-top: 4rem;
+      text-align: center;
+      border-top: 1px solid #deeada;
+      padding-top: 2rem;
+      font-size: 0.85rem;
+      color: #83997a;
+    }
+    @media (max-width: 800px) {
+      .container { padding: 1.5rem 1.2rem 3rem; }
+      .welcome-hero h2 { font-size: 1.6rem; }
+      .school-text h1 { font-size: 1.35rem; }
+      .logo-mark { width: 90px; height: 90px; }
+      .arabic-fallback .line { font-size: 1.1rem; }
+    }
+    @media (max-width: 480px) {
+      .header { flex-direction: column; align-items: flex-start; }
+      .non-boarding-tag { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+<div class="bg-soft"></div>
+<div class="container">
+
+  <!-- Header dengan logo gambar (ganti src sesuai nama file logo Anda) -->
+  <div class="header">
+    <div class="logo-area">
+      <div class="logo-mark">
+        <img src="logo sekolah.jpeg" alt="Logo Ma'had Imam Ibnu Katsir" class="school-logo" 
+             onerror="this.style.display='none'; this.parentNode.querySelector('.arabic-fallback').style.display='flex';">
+        <div class="arabic-fallback" style="display: none;">
+          <div class="line">الإمام</div>
+          <div class="line">ابن كثير</div>
+        </div>
+      </div>
+      <div class="school-text">
+        <h1>Ma'had Imam Ibnu Katsir <span style="color:#b38f4a;">Karawang</span></h1>
+        <p>TK & SD Islam Tahfidz | Non-Asrama | Qur'ani & Berprestasi</p>
+      </div>
+    </div>
+    <div class="non-boarding-tag">
+      <i class="fas fa-school"></i> Non-Boarding School · Tanpa Asrama
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <div class="welcome-hero">
+    <h2><i class="fas fa-hand-peace"></i> Selamat Datang Ayah & Bunda</h2>
+    <p>Assalamu'alaikum warahmatullahi wabarakatuh. Kami membuka Pendaftaran Peserta Didik Baru TK & SD Ma'had Imam Ibnu Katsir Karawang Tahun Ajaran 2027/2028. Lingkungan islami, program Tahfidz Quran, pembinaan akhlak dan prestasi.</p>
+    <div class="greeting-box">
+      <i class="fas fa-star-of-life" style="color:#b38f4a;"></i> "Membangun generasi penghafal Quran, berilmu, beradab, dan berprestasi"
+    </div>
+  </div>
+
+  <!-- Visi & Misi (salin dari gambar) -->
+  <div class="vision-mission">
+    <div class="vm-card">
+      <h3><i class="fas fa-eye"></i> Visi</h3>
+      <p><strong>Menjadi Sekolah Unggulan berbasis Tahfidzul Quran, berkarakter islami, mandiri dan berjiwa sosial tinggi yang dapat mewujudkan generasi islam yang berkualitas dalam kehidupan sehari-hari.</strong></p>
+    </div>
+    <div class="vm-card">
+      <h3><i class="fas fa-bullseye"></i> Misi</h3>
+      <ul class="mission-list">
+        <li><i class="fas fa-check-circle"></i> Melakukan pembinaan pada peserta didik secara terpadu dalam penguasaan ilmu tajwid dan IPTEK melalui kegiatan akademik dan ekstrakurikuler.</li>
+        <li><i class="fas fa-check-circle"></i> Melakukan pembelajaran dengan metode yang mudah diserap peserta didik secara inovatif, aktif, kreatif dan menyenangkan.</li>
+        <li><i class="fas fa-check-circle"></i> Memberikan pelayanan prima dan mengefektifkan komunikasi antar sekolah dan orang tua dalam pembinaan peserta didik.</li>
+        <li><i class="fas fa-check-circle"></i> Melakukan pembinaan yang berkesinambungan dalam meningkatkan kualitas tenaga pendidik sesuai perkembangan zaman meliputi wawasan, daya analisis, kreatif dan inovatif berdasarkan nilai-nilai Islam.</li>
+        <li><i class="fas fa-check-circle"></i> Mendayagunakan fasilitas dan lingkungan sekolah secara efektif dan efisien sebagai sumber pembelajaran.</li>
+        <li><i class="fas fa-check-circle"></i> Mendayagunakan ICT (Information and Communication Technology) atau TIK (Teknologi Informasi dan Komunikasi) dan bahasa asing (bahasa inggris dan bahasa arab) di lingkungan sekolah.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Moto -->
+  <div class="motto-box">
+    <i class="fas fa-quran"></i> <strong>AL QURAN SELALU DIHATI, BERILMU, BERADAB, BERAMAL DAN BERPRESTASI!</strong>
+  </div>
+
+  <!-- Informasi Pendaftaran dengan jadwal gelombang -->
+  <div class="admission-info">
+    <h3><i class="fas fa-address-card"></i> Informasi Pendaftaran</h3>
+    <div class="admission-grid">
+      <div class="admission-col">
+        <h4><i class="fas fa-calendar-alt"></i> Jadwal PPDB</h4>
+        <ul>
+          <li><i class="fas fa-flag-checkered"></i> <strong>Gelombang 1:</strong> 1 November - 31 Desember 2026</li>
+          <li><i class="fas fa-flag-checkered"></i> <strong>Gelombang 2:</strong> 1 Januari - 31 Maret 2027</li>
+          <li><i class="fas fa-check-circle"></i> Observasi & Wawancara: Dijadwalkan</li>
+          <li><i class="fas fa-check-circle"></i> Pengumuman: 2 minggu setelah observasi</li>
+          <li><i class="fas fa-school"></i> Mulai sekolah: Juli 2027</li>
+        </ul>
+      </div>
+      <div class="admission-col">
+        <h4><i class="fas fa-file-alt"></i> Persyaratan</h4>
+        <ul>
+          <li><i class="fas fa-id-card"></i> Fotokopi Akta Kelahiran</li>
+          <li><i class="fas fa-address-book"></i> Fotokopi Kartu Keluarga</li>
+          <li><i class="fas fa-camera"></i> Pas foto 3x4 (2 lembar)</li>
+        </ul>
+      </div>
+      <div class="admission-col">
+        <h4><i class="fas fa-school"></i> Program Unggulan</h4>
+        <ul>
+          <li><i class="fas fa-quran"></i> Tahfidz Quran (Juz 30)</li>
+          <li><i class="fas fa-language"></i> Bahasa Arab & Inggris</li>
+          <li><i class="fas fa-microchip"></i> ICT & Teknologi</li>
+        </ul>
+      </div>
+    </div>
+    <div class="schedule-highlight">
+      <i class="fas fa-bullhorn" style="color:#b38f4a;"></i> 
+      <strong>Pendaftaran Gelombang 1: 1 November – 31 Desember 2026</strong><br>
+      <strong>Gelombang 2: 1 Januari – 31 Maret 2027</strong>
+      <p style="margin-top:6px;">*Kuota terbatas, segera daftar!</p>
+    </div>
+    <div class="non-boarding-badge">
+      <i class="fas fa-home"></i> <strong>Sistem Non-Asrama (Non-Boarding School)</strong> — Peserta didik tidak tinggal di asrama.
+    </div>
+    <div class="address-block">
+      <i class="fas fa-map-marker-alt"></i> <strong>Alamat:</strong> Perum Griya Kondang Asri Blok DD 3/2 & DD 2/30 RT 019 RW 06, Klari, Karawang
+    </div>
+  </div>
+
+  <!-- Kontak -->
+  <div class="contact-section">
+    <h3><i class="fas fa-headset"></i> Kontak Pendaftaran</h3>
+    <div class="contact-details">
+      <div class="contact-item"><i class="fas fa-user-graduate"></i><span>Abu Muzzammil: <strong>081382004036</strong></span></div>
+      <div class="contact-item"><i class="fas fa-user-friends"></i><span>Ummu Muzzammil: <strong>085817547162</strong></span></div>
+    </div>
+    <p style="margin-top:1rem;"><i class="fas fa-clock"></i> Jam layanan: Senin-Jumat 08.00 - 15.00</p>
+  </div>
+
+  <!-- Tombol Daftar (Register Now) dengan link Google Form -->
+  <section id="pendaftaran" style="text-align:center; padding:20px 20px 40px;">
+    <h2 style="color:#2a5e38;">Pendaftaran Santri Baru</h2>
+    <p style="margin-bottom:10px;">Klik tombol di bawah untuk mengisi formulir pendaftaran online.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeAAeI-jkcdyfAgtzYNgnOnHewc5pCsqBX4S5MbgKQA9cAcXw/viewform?usp=header" 
+       target="_blank" rel="noopener noreferrer" class="btn-register">
+       DAFTAR SEKARANG
+    </a>
+  </section>
+
+  <div class="footer">
+    <p><i class="fas fa-location-dot"></i> SD Islam Tahfidz Imam Ibnu Katsir Karawang | Perum Griya Kondang Asri, Klari</p>
+    <p><i class="fas fa-phone-alt"></i> 081382004036 | 085817547162</p>
+    <p>© 2026-2027 Ma'had Imam Ibnu Katsir Karawang (TK & SD) — Non-Asrama</p>
+  </div>
+</div>
+
+<script>
+  // Fallback untuk menampilkan teks arab jika gambar gagal load
+  document.querySelectorAll('.logo-mark img').forEach(img => {
+    if (img.complete && img.naturalWidth === 0) {
+      img.style.display = 'none';
+      const fallback = img.parentNode.querySelector('.arabic-fallback');
+      if (fallback) fallback.style.display = 'flex';
+    } else {
+      img.onerror = function() {
+        this.style.display = 'none';
+        const fallback = this.parentNode.querySelector('.arabic-fallback');
+        if (fallback) fallback.style.display = 'flex';
+      };
+    }
+  });
+</script>
+</body>
+</html>
